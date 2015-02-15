@@ -17,6 +17,7 @@ class PostsController extends AppController{
         //beforeFilterで共通化  
         $categories=$this->categories_common;
         $sortOrder=$this->sortOrder_common;
+        $appid=$this->appid_common;
 
         //itemlook_id
         $itemcode=null;
@@ -44,7 +45,7 @@ class PostsController extends AppController{
 
 
         //  $query4url = rawurlencode($query);
-        $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+        //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
         $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/itemLookup?appid=$appid&itemcode=$itemcode";
         $xml = simplexml_load_file($url);
@@ -96,6 +97,8 @@ public function reviewSearch()
 //beforeFilterで共通化  
     $categories=$this->categories_common;
     $sortOrder=$this->sortOrder_common;
+    $appid=$this->appid_common;
+
     $price_from_select=array('1000' => 1000,'2000' => 2000,'3000' => 3000,'4000' => 4000,'5000' => 5000,'6000' => 6000 );
     $price_to_select=array('5000' => 5000,'10000' => 10000,'20000' => 20000 ,'100000' => 100000);
     $offset_select=array("1位から２０位まで"=>1,"20位から４０位まで"=>20);
@@ -120,7 +123,7 @@ public function reviewSearch()
 
 
     //  $query4url = rawurlencode($query);
-    $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+    //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
     $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/reviewSearch?appid=$appid&category_id=$category_id";
     $xml = simplexml_load_file($url);
@@ -142,6 +145,7 @@ public function keywordranking()
     //beforeFilterで共通化  
     $categories=$this->categories_common;
     $sortOrder=$this->sortOrder_common;
+    $appid=$this->appid_common;
 
 
     $price_from_select=array('1000' => 1000,'2000' => 2000,'3000' => 3000,'4000' => 4000,'5000' => 5000,'6000' => 6000 );
@@ -174,7 +178,7 @@ public function keywordranking()
 
         if ($query != "") {
             $query4url = rawurlencode($query);
-        $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+        //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
         $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/queryRanking?appid=$appid";
         $xml = simplexml_load_file($url);
@@ -201,6 +205,7 @@ public function search()
     //beforeFilterで共通化  
     $categories=$this->categories_common;
     $sortOrder=$this->sortOrder_common;
+    $appid=$this->appid_common;
 
     $price_from_select=array('1000' => 1000,'2000' => 2000,'3000' => 3000,'4000' => 4000,'5000' => 5000,'6000' => 6000 );
     $price_to_select=array('5000' => 5000,'10000' => 10000,'20000' => 20000 ,'100000' => 100000);
@@ -234,7 +239,7 @@ public function search()
 
     if ($query != "") {
         $query4url = rawurlencode($query);
-    $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+    //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
     $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/itemSearch?appid=$appid&query=$query4url";
     $xml = simplexml_load_file($url);
@@ -259,6 +264,7 @@ public function ranking() {
     //beforeFilterで共通化  
     $categories=$this->categories_common;
     $sortOrder=$this->sortOrder_common;
+    $appid=$this->appid_common;
 
     $genders= array("male" => "male","female" => "female" );
     $generations=array('10' => 10,'20' => 20,'30' => 30,'40' => 40,'50' => 50,'60' => 60 );
@@ -288,7 +294,7 @@ public function ranking() {
     //http://developer.yahoo.co.jp/sample/shopping/sample3.html
     $hits = array();
     //$category_id = "2495";//検索したいカテゴリーIDを入れてください。
-    $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+    //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
     if ($category_id != "") {
         $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/categoryRanking?appid=$appid&category_id=$category_id&gender=$gender&period=$period&offset=$offset";
@@ -325,6 +331,7 @@ public function index() {
 //beforeFilterで共通化  
     $categories=$this->categories_common;
     $sortOrder=$this->sortOrder_common;
+    $appid=$this->appid_common;
 
 //入力されたカテゴリから検索   
     if ($this->request->is('post')) {
@@ -341,7 +348,7 @@ public function index() {
     //http://developer.yahoo.co.jp/sample/shopping/sample3.html
     $hits = array();
     //$category_id = "2495";//検索したいカテゴリーIDを入れてください。
-    $appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+    //$appid = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
 
     if ($category_id != "") {
         $url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/categoryRanking?appid=$appid&category_id=$category_id";

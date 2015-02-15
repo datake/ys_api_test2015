@@ -76,13 +76,15 @@ class AppController extends Controller {
         );
 
          $this->sortOrder_common = array(
-    "-score" => "おすすめ順",
-    "+price" => "商品価格が安い順",
-    "-price" => "商品価格が高い順",
-    "+name" => "ストア名昇順",
-    "-name" => "ストア名降順",
-    "-sold" => "売れ筋順"
-    );
+            "-score" => "おすすめ順",
+            "+price" => "商品価格が安い順",
+            "-price" => "商品価格が高い順",
+            "+name" => "ストア名昇順",
+            "-name" => "ストア名降順",
+            "-sold" => "売れ筋順"
+            );
+         $this->appid_common = "dj0zaiZpPWxQaFBRSzBnM1JlTSZzPWNvbnN1bWVyc2VjcmV0Jng9ZjU-";//取得したアプリケーションIDを設定
+
     }
     //$this->set("referer",$this->referer());
 
