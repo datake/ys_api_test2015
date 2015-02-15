@@ -60,7 +60,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 			
 
-			
+			p {
+			    margin-bottom: 14px;
+			}	
 			ul.listview {
 			    margin-bottom: 15px;
 			}
@@ -88,13 +90,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<?php if ($auth->user('username')){
 					echo h($auth->user('username'));?>
 					さんでloginしています。&nbsp;&nbsp;&nbsp;
-					　<a href="/cakephp-blog/Users/logout">logoutはこちら</a></h1>
+					　<a href="/shopping/Users/logout">logoutはこちら</a></h1>
 
 					<?php 
 				} elseif (!($auth->user('username'))) {?>
 
 				まだloginしていません。&nbsp;&nbsp;&nbsp;
-				<a href="/cakephp-blog/Users/login">loginはこちら</a></h1>
+				<a href="/shopping/Users/login">loginはこちら</a></h1>
 				<?php 
 			}?>
 			<!--<h2>default.ctp container headerh2</h2>-->
