@@ -57,6 +57,32 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				color: #fff;
 				padding: 0px 30px;
 			}
+
+			
+
+			
+			ul.listview {
+			    margin-bottom: 15px;
+			}
+			ul.listview>li {
+			    overflow: hidden;
+			    margin-bottom:10px;
+			    padding-bottom:10px;
+			    border-bottom: 1px dotted #ccc;
+			    list-style-type: none;
+			}
+			ul.listview>li:last-child {
+			    border: none;
+			}
+			ul.listview>li>img {
+			    float: left;
+			    width: 100px;
+			}
+			ul.listview>li>p {
+			    margin-left: 110px;
+			    font-size: 13px;
+			}
+
 			</style>
 			<h1><?php echo $this->Html->link('Home', '/'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<?php if ($auth->user('username')){
