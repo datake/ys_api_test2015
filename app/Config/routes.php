@@ -25,7 +25,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	//アプリケーション直下にアクセスしたときのセ設定
-	Router::connect('/', array('controller' => 'posts', 'action' => 'search'));
+	Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

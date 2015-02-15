@@ -1,37 +1,35 @@
-
-<h2>Shopping</h2>
+<ul>
+	<li>
 <?php
+    echo $this->Html->link('商品検索', array(
+    'controller' => 'Posts',
+    'action' => 'Search'
+    ));?></li><li>
+	<?php
+    echo $this->Html->link('カテゴリランキング', array(
+    'controller' => 'Posts',
+    'action' => 'Ranking'
+    ));
+    ?></li><li>
+	<?php
 
+    echo $this->Html->link('レビュー', array(
+    'controller' => 'Posts',
+    'action' => 'reviewSearch'
+    ));
+    ?></li><li>
+	<?php
+
+
+    echo $this->Html->link('よく検索されるキーワード', array(
+    'controller' => 'Posts',
+    'action' => 'keywordranking'
+    ));
 ?>
-<?php foreach ($ranking_data as $ranking) { ?>
-<div class="Item">
-    <h2><a href="<?php echo h($ranking->Url); ?>"><?php echo h($ranking->Name); ?></a></h2>
-    <p><a href="<?php echo h($ranking->Url); ?>"><img src="<?php echo h($ranking->Image->Medium); ?>" /></a><?php echo h($ranking->Description); ?></p>
-</div>
-<?php } ?>
 
-
-
-
-<script>
-$(function() {
-$('a.delete').click(function(e) {//a要素のdeleteクラスがついたものがクリックされた処理
-    if (confirm('sure?')) {
-//次の行パスを間違えてはまった!注意！
-$.post('/cakephp-blog/posts/delete/'+$(this).data('post-id'), {}, function(res) {
-//削除にフェードアウトを使う
-$('#post_'+res.id).fadeOut();
-}, "json");
-}
-return false;
-});
-});
-</script>
-
-
-
-
-
+</ul>
+<p>商品検索、カテゴリランキングのページのリンクをクリックすると個別の商品ページへ遷移されます。レビュー、よく検索されるキーワードのページのリンクをクリックすると個別の商品ページへ遷移されます。</p>
+<p>個別の商品ページには、その商品を売る店舗のレビューも表示されます	</P>
 
 
 

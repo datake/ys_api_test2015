@@ -1,6 +1,6 @@
 Search        -商品検索
 Ranking       -カテゴリランキング
-reviewSearch  -ーレビュー検索
+reviewSearch  -レビュー検索
 keywordranking-よく検索されるキーワード
 itemLookup    -個別の商品ページ
 
